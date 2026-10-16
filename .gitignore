@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+# реальные сборочные листы и результаты не коммитим
+carriage_assembly_list*.pdf
+Сборочный_лист_объединённый_*
+*.xlsx
+*.csv

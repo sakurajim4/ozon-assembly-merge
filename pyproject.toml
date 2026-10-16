@@ -1,0 +1,40 @@
+[build-system]
+requires = ["hatchling>=1.21"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ozon-assembly-merge"
+version = "0.1.0"
+description = "Склеивает PDF сборочных листов Ozon в один список с суммой по артикулу (XLSX/CSV/PDF)"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE", "src/ozon_assembly_merge/fonts/DejaVu-LICENSE.txt"]
+requires-python = ">=3.10"
+authors = [{ name = "sakurajim4" }]
+keywords = ["ozon", "marketplace", "fbs", "pdf", "assembly-list"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+  "Natural Language :: Russian",
+  "Topic :: Office/Business",
+]
+dependencies = [
+  "pdfplumber>=0.11",
+  "openpyxl>=3.1",
+  "reportlab>=4.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+ozon-assembly-merge = "ozon_assembly_merge.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/sakurajim4/ozon-assembly-merge"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ozon_assembly_merge"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
